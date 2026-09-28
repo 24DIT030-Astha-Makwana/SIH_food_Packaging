@@ -22,6 +22,7 @@ export default function App() {
             <Route path="/recommend" element={<GetRecommendationPage />} />
             <Route path="/history" element={<MyRecommendationsPage />} />
             <Route path="/doctor" element={<PackagingDoctorPage />} />
+            <Route path="/packaging-doctor" element={<PackagingDoctorPage />} />
             <Route path="/compare" element={<ComparisonPage />} />
             <Route path="/learn" element={<LearnPage />} />
             <Route path="/about" element={<AboutPage />} />

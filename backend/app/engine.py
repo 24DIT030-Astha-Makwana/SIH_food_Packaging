@@ -72,17 +72,61 @@ def get_or_create_digital_twin(db, product_name: str, custom_name: str = None) -
         }
 
 def evaluate_recommendations(db, request_data: Dict[str, Any]) -> Dict[str, Any]:
-    product_input = request_data.get("product", "Potato chips")
+    product_input = request_data.get("product") or request_data.get("custom_product_name") or "Food Product"
     custom_name = request_data.get("custom_product_name")
-    shelf_life = request_data.get("shelf_life", "1–3 months")
-    storage = request_data.get("storage", "Room temperature")
-    transportation = request_data.get("transportation", "Long distance")
-    priority = request_data.get("priority", "Balanced")
-    problem = request_data.get("problem", "No major problem")
+    food_category = request_data.get("food_category") or "General"
+    shelf_life = request_data.get("desired_shelf_life") or request_data.get("shelf_life") or "1–3 months"
+    storage = request_data.get("storage_type") or request_data.get("storage") or "Room temperature"
+    storage_temp = request_data.get("storage_temperature") or "Normal room temperature"
+    rel_humidity = request_data.get("relative_humidity") or "Normal humidity"
+    transportation = request_data.get("transportation") or "Long distance"
+    handling_level = request_data.get("handling_level") or "Medium"
+    priority = request_data.get("priority") or "Balanced"
+    problem = request_data.get("problem") or "No major problem"
+    category_details = request_data.get("category_details") or {}
 
     # 1. Digital Twin Retrieval
     twin = get_or_create_digital_twin(db, product_input, custom_name)
     prod_name = twin["name"]
+    if food_category and food_category != "General":
+        twin["category"] = food_category
+
+    # Extract measured inputs if provided
+    moisture_known = request_data.get("moisture_known", False)
+    moisture_content = request_data.get("moisture_content")
+    fat_known = request_data.get("fat_known", False)
+    fat_applicable = request_data.get("fat_applicable", True)
+    fat_content = request_data.get("fat_content")
+    ph_known = request_data.get("ph_known", False)
+    ph_applicable = request_data.get("ph_applicable", True)
+    ph_val = request_data.get("ph_value")
+    resp_known = request_data.get("respiration_known", False)
+    resp_applicable = request_data.get("respiration_applicable", True)
+    resp_val = request_data.get("respiration_rate_val")
+
+    # Override digital twin sensitivity based on measured values
+    if moisture_known and moisture_content is not None:
+        if moisture_content < 6.0 or moisture_content > 65.0:
+            twin["moisture_sensitivity"] = "Critical"
+
+    if fat_applicable and fat_known and fat_content is not None:
+        if fat_content >= 12.0:
+            twin["oxygen_sensitivity"] = "Critical"
+
+    if resp_applicable and resp_known and resp_val is not None:
+        if resp_val >= 40.0:
+            twin["respiration_class"] = "High"
+
+    # Override digital twin sensitivity based on category details if user provided them
+    if category_details.get("main_concern"):
+        concern = str(category_details.get("main_concern")).lower()
+        if "crisp" in concern or "moisture" in concern or "soggy" in concern or "caking" in concern:
+            twin["moisture_sensitivity"] = "Critical"
+        if "rancid" in concern or "oxidation" in concern or "aroma" in concern or "color" in concern or "spoilage" in concern:
+            twin["oxygen_sensitivity"] = "Critical"
+
+    if rel_humidity in ["High humidity", "Very humid / tropical conditions"]:
+        twin["moisture_sensitivity"] = "Critical"
 
     # 2. Priority Weights Configuration
     weights = {
@@ -251,13 +295,26 @@ def evaluate_recommendations(db, request_data: Dict[str, Any]) -> Dict[str, Any]
         confidence = "Medium"
         confidence_reason = "Medium confidence based on generalized food category heuristic rules for custom product entry."
 
+    summary_moisture = f"✓ User Provided ({moisture_content}%)" if (moisture_known and moisture_content is not None) else "≈ PackTwin Estimated"
+    summary_fat = f"✓ User Provided ({fat_content}%)" if (fat_applicable and fat_known and fat_content is not None) else ("— Not Applicable" if not fat_applicable else "≈ PackTwin Estimated")
+    summary_ph = f"✓ User Provided ({ph_val})" if (ph_applicable and ph_known and ph_val is not None) else ("— Not Applicable" if not ph_applicable else "≈ PackTwin Estimated")
+    summary_resp = f"✓ User Provided ({resp_val} mg CO₂/kg·h)" if (resp_applicable and resp_known and resp_val is not None) else ("— Not Applicable" if not resp_applicable else "≈ PackTwin Estimated")
+
     return {
         "product": prod_name,
         "input_summary": {
+            "Category": food_category,
             "Product": prod_name,
-            "Shelf life": shelf_life,
+            "Shelf Life": shelf_life,
             "Storage": storage,
+            "Storage Temp": storage_temp,
+            "Humidity": rel_humidity,
+            "Moisture Content": summary_moisture,
+            "Oil / Fat Content": summary_fat,
+            "Product pH": summary_ph,
+            "Respiration Rate": summary_resp,
             "Transportation": transportation,
+            "Handling": handling_level,
             "Priority": priority,
             "Facing Problem": problem or "None"
         },

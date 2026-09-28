@@ -7,8 +7,26 @@ class RecommendationRequest(BaseModel):
     shelf_life: str
     storage: str
     transportation: str
-    priority: str
+    priority: str = "Balanced"
     problem: Optional[str] = "No major problem"
+    food_category: Optional[str] = None
+    desired_shelf_life: Optional[str] = None
+    storage_type: Optional[str] = None
+    storage_temperature: Optional[str] = None
+    relative_humidity: Optional[str] = None
+    handling_level: Optional[str] = None
+    category_details: Optional[Dict[str, Any]] = None
+    moisture_content: Optional[float] = None
+    moisture_known: Optional[bool] = False
+    fat_content: Optional[float] = None
+    fat_known: Optional[bool] = False
+    fat_applicable: Optional[bool] = True
+    ph_value: Optional[float] = None
+    ph_known: Optional[bool] = False
+    ph_applicable: Optional[bool] = True
+    respiration_rate_val: Optional[float] = None
+    respiration_known: Optional[bool] = False
+    respiration_applicable: Optional[bool] = True
 
 class PackagingOption(BaseModel):
     tier: str  # Budget, Recommended, Premium

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Package, Sparkles, Menu, X, Stethoscope, Scale, BookOpen, ShieldCheck, History } from 'lucide-react';
+import { Package, Sparkles, Stethoscope, Menu, X, Scale, BookOpen, History } from 'lucide-react';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -8,9 +8,9 @@ export default function Navbar() {
 
   const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'Get Recommendation', path: '/recommend' },
-    { name: 'My Recommendations', path: '/history' },
-    { name: 'Packaging Doctor', path: '/doctor' },
+    { name: 'Packaging Doctor', path: '/packaging-doctor' },
+    { name: 'New Package', path: '/recommend' },
+    { name: 'My History', path: '/history' },
     { name: 'Compare', path: '/compare' },
     { name: 'Learn', path: '/learn' },
     { name: 'About', path: '/about' },
@@ -25,13 +25,13 @@ export default function Navbar() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2.5 group">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-sky-600 flex items-center justify-center text-white shadow-sm shadow-emerald-500/20 group-hover:scale-105 transition-transform">
-              <Package className="w-5 h-5" />
+              <Stethoscope className="w-5 h-5" />
             </div>
             <div className="flex flex-col">
               <span className="font-bold text-slate-900 text-lg leading-tight tracking-tight flex items-center gap-1">
                 PackTwin <span className="text-emerald-600 font-extrabold">AI</span>
               </span>
-              <span className="text-[10px] text-slate-500 font-medium tracking-wide uppercase">Smart Food Packaging Advisor</span>
+              <span className="text-[10px] text-slate-500 font-semibold tracking-wide uppercase">AI Packaging Doctor</span>
             </div>
           </Link>
 
@@ -53,13 +53,13 @@ export default function Navbar() {
           </nav>
 
           {/* Right Action Button */}
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-2.5">
             <Link
-              to="/recommend"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-700 hover:to-emerald-600 text-white font-medium text-sm px-4 py-2.5 rounded-xl shadow-sm shadow-emerald-600/20 transition-all hover:shadow-md hover:scale-[1.02] active:scale-[0.98]"
+              to="/packaging-doctor"
+              className="inline-flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs px-4 py-2.5 rounded-xl shadow-xs transition-all hover:scale-105"
             >
-              <Sparkles className="w-4 h-4 text-emerald-100" />
-              Start Analysis
+              <Stethoscope className="w-4 h-4" />
+              Packaging Doctor
             </Link>
           </div>
 
@@ -93,14 +93,14 @@ export default function Navbar() {
               {link.name}
             </Link>
           ))}
-          <div className="pt-2">
+          <div className="pt-2 space-y-2">
             <Link
-              to="/recommend"
+              to="/packaging-doctor"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full flex items-center justify-center gap-2 bg-emerald-600 text-white font-medium text-base py-3 rounded-xl shadow-sm"
+              className="w-full flex items-center justify-center gap-2 bg-emerald-600 text-white font-semibold text-sm py-2.5 rounded-xl shadow-xs"
             >
-              <Sparkles className="w-4 h-4" />
-              Start Analysis
+              <Stethoscope className="w-4 h-4" />
+              Packaging Doctor
             </Link>
           </div>
         </div>
