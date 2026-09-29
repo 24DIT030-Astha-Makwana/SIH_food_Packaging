@@ -36,7 +36,7 @@ export default function LearnPage() {
     {
       title: "How to Choose Packaging for Your Food Business?",
       icon: HelpCircle,
-      desc: "Start with your product requirements, storage temperature, transit distance, and cost targets. Let PackTwin AI analyze the science so you don't need technical formulas."
+      desc: "Start with your product requirements, storage temperature, transit distance, and cost targets. Let Eco-PackAI analyze the science so you don't need technical formulas."
     }
   ];
 

@@ -1,5 +1,5 @@
 /**
- * PackTwin AI - Risk Engine (Services)
+ * Eco-PackAI - Risk Engine (Services)
  * 
  * Transparent rule-based engineering risk engine.
  * Calculates dynamic risk levels for Moisture Ingress, Oxygen Ingress, Seal Leakage,

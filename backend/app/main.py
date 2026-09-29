@@ -15,7 +15,7 @@ finally:
     db.close()
 
 app = FastAPI(
-    title="PackTwin AI API",
+    title="Eco-PackAI API",
     description="Smart Food Packaging Advisor Recommendation & Decision Engine",
     version="1.0.0"
 )
@@ -38,4 +38,6 @@ app.include_router(reports.router)
 
 @app.get("/api/health")
 def health_check():
-    return {"status": "ok", "service": "PackTwin AI Engine"}
+    return {"status": "ok", "service": "Eco-PackAI Engine"}
+
+

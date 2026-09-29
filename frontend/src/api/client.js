@@ -1,4 +1,4 @@
-const API_BASE = '/api';
+const API_BASE = import.meta.env.VITE_API_URL || '/api';
 
 export async function fetchProducts() {
   const res = await fetch(`${API_BASE}/products`);
@@ -80,7 +80,7 @@ export async function downloadReportPdf(recommendationData) {
   const a = document.createElement('a');
   a.href = url;
   const productName = (recommendationData.product || 'recommendation').toLowerCase().replace(/\s+/g, '_');
-  a.download = `packtwin_recommendation_${productName}.pdf`;
+  a.download = `Eco-PackAI_recommendation_${productName}.pdf`;
   document.body.appendChild(a);
   a.click();
   a.remove();

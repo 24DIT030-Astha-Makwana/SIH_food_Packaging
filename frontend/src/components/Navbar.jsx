@@ -29,7 +29,7 @@ export default function Navbar() {
             </div>
             <div className="flex flex-col">
               <span className="font-bold text-slate-900 text-lg leading-tight tracking-tight flex items-center gap-1">
-                PackTwin <span className="text-emerald-600 font-extrabold">AI</span>
+                Eco-PackAI <span className="text-emerald-600 font-extrabold">AI</span>
               </span>
               <span className="text-[10px] text-slate-500 font-semibold tracking-wide uppercase">AI Packaging Doctor</span>
             </div>

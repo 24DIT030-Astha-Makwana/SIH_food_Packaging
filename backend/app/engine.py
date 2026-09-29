@@ -295,10 +295,10 @@ def evaluate_recommendations(db, request_data: Dict[str, Any]) -> Dict[str, Any]
         confidence = "Medium"
         confidence_reason = "Medium confidence based on generalized food category heuristic rules for custom product entry."
 
-    summary_moisture = f"✓ User Provided ({moisture_content}%)" if (moisture_known and moisture_content is not None) else "≈ PackTwin Estimated"
-    summary_fat = f"✓ User Provided ({fat_content}%)" if (fat_applicable and fat_known and fat_content is not None) else ("— Not Applicable" if not fat_applicable else "≈ PackTwin Estimated")
-    summary_ph = f"✓ User Provided ({ph_val})" if (ph_applicable and ph_known and ph_val is not None) else ("— Not Applicable" if not ph_applicable else "≈ PackTwin Estimated")
-    summary_resp = f"✓ User Provided ({resp_val} mg CO₂/kg·h)" if (resp_applicable and resp_known and resp_val is not None) else ("— Not Applicable" if not resp_applicable else "≈ PackTwin Estimated")
+    summary_moisture = f"✓ User Provided ({moisture_content}%)" if (moisture_known and moisture_content is not None) else "≈ Eco-PackAI Estimated"
+    summary_fat = f"✓ User Provided ({fat_content}%)" if (fat_applicable and fat_known and fat_content is not None) else ("— Not Applicable" if not fat_applicable else "≈ Eco-PackAI Estimated")
+    summary_ph = f"✓ User Provided ({ph_val})" if (ph_applicable and ph_known and ph_val is not None) else ("— Not Applicable" if not ph_applicable else "≈ Eco-PackAI Estimated")
+    summary_resp = f"✓ User Provided ({resp_val} mg CO₂/kg·h)" if (resp_applicable and resp_known and resp_val is not None) else ("— Not Applicable" if not resp_applicable else "≈ Eco-PackAI Estimated")
 
     return {
         "product": prod_name,
@@ -373,3 +373,5 @@ def diagnose_packaging_problem(product_name: str, problem_desc: str) -> Dict[str
         "alternative_packaging": alternative_packaging,
         "validation_info_needed": validation_info
     }
+
+

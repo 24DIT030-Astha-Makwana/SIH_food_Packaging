@@ -16,7 +16,7 @@ export default function Hero() {
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
-            PackTwin <span className="bg-gradient-to-r from-emerald-600 to-sky-600 bg-clip-text text-transparent">AI</span>
+            Eco-PackAI <span className="bg-gradient-to-r from-emerald-600 to-sky-600 bg-clip-text text-transparent">AI</span>
           </h1>
 
           <p className="text-lg sm:text-xl text-slate-700 font-semibold max-w-2xl mx-auto">
@@ -24,7 +24,7 @@ export default function Hero() {
           </p>
 
           <p className="text-xs sm:text-sm text-slate-500 max-w-xl mx-auto leading-relaxed">
-            “Most systems tell you what package to use. PackTwin tells you WHY your package is failing and HOW to redesign it with minimum necessary change.”
+            “Most systems tell you what package to use. Eco-PackAI tells you WHY your package is failing and HOW to redesign it with minimum necessary change.”
           </p>
 
           {/* Quick Demo Button for Hackathon Judges */}
@@ -105,10 +105,10 @@ export default function Hero() {
         </div>
       </section>
 
-      {/* HOW PACKTWIN WORKS — 5 STEP VISUAL FLOW */}
+      {/* HOW Eco-PackAI WORKS — 5 STEP VISUAL FLOW */}
       <section className="bg-slate-50 p-8 sm:p-12 rounded-3xl border border-slate-200/80 space-y-8 max-w-5xl mx-auto">
         <div className="text-center max-w-xl mx-auto space-y-1">
-          <h2 className="text-2xl font-bold text-slate-900">How PackTwin Works</h2>
+          <h2 className="text-2xl font-bold text-slate-900">How Eco-PackAI Works</h2>
           <p className="text-slate-600 text-xs">Five engineering steps from failure diagnosis to validated packaging specification.</p>
         </div>
 

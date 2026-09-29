@@ -13,10 +13,10 @@ export default function Footer() {
               <div className="w-9 h-9 rounded-xl bg-emerald-500 flex items-center justify-center text-white">
                 <Package className="w-5 h-5" />
               </div>
-              <span className="font-bold text-white text-xl">PackTwin AI</span>
+              <span className="font-bold text-white text-xl">Eco-PackAI</span>
             </div>
             <p className="text-sm text-slate-400 max-w-md leading-relaxed">
-              “You know your product. We handle the packaging science.” PackTwin AI helps food businesses, farmers, startups, and manufacturers discover optimal packaging options without technical packaging jargon.
+              “You know your product. We handle the packaging science.” Eco-PackAI helps food businesses, farmers, startups, and manufacturers discover optimal packaging options without technical packaging jargon.
             </p>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800/80 border border-slate-700/60 text-xs text-emerald-400">
               <ShieldCheck className="w-4 h-4 text-emerald-400" />
@@ -40,7 +40,7 @@ export default function Footer() {
             <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Knowledge & Mission</h4>
             <ul className="space-y-2 text-sm">
               <li><Link to="/learn" className="hover:text-emerald-400 transition-colors">Learn Packaging Basics</Link></li>
-              <li><Link to="/about" className="hover:text-emerald-400 transition-colors">About PackTwin AI</Link></li>
+              <li><Link to="/about" className="hover:text-emerald-400 transition-colors">About Eco-PackAI</Link></li>
               <li className="text-slate-500 pt-2 text-xs leading-normal">
                 Designed to reduce food waste, optimize shelf life, and foster sustainable food delivery.
               </li>
@@ -49,7 +49,7 @@ export default function Footer() {
         </div>
 
         <div className="pt-8 border-t border-slate-800 text-xs text-slate-500 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p>© {new Date().getFullYear()} PackTwin AI – Smart Food Packaging Advisor. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Eco-PackAI – Smart Food Packaging Advisor. All rights reserved.</p>
           <p className="flex items-center gap-1">
             Built with science for non-technical food creators.
           </p>

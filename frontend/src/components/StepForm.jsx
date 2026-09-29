@@ -258,7 +258,7 @@ export default function StepForm({ onSubmit }) {
         <div className="space-y-6 animate-fadeIn">
           <div className="space-y-2">
             <h2 className="text-2xl font-bold text-slate-900">Tell us about your product parameters</h2>
-            <p className="text-slate-600 text-sm">Enter measurable values if available. PackTwin will estimate any unknown information from our food database.</p>
+            <p className="text-slate-600 text-sm">Enter measurable values if available. Eco-PackAI will estimate any unknown information from our food database.</p>
           </div>
 
           {/* Specific Product Selection */}
@@ -902,7 +902,7 @@ export default function StepForm({ onSubmit }) {
         <div className="space-y-6 animate-fadeIn">
           <div className="space-y-2 text-center sm:text-left">
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">Review Product Analysis Request</h2>
-            <p className="text-slate-600 text-sm">Verify measured user values vs PackTwin estimated parameters before running AI analysis.</p>
+            <p className="text-slate-600 text-sm">Verify measured user values vs Eco-PackAI estimated parameters before running AI analysis.</p>
           </div>
 
           {/* Provenance Distinction Grid */}
@@ -932,7 +932,7 @@ export default function StepForm({ onSubmit }) {
                   </span>
                 ) : (
                   <span className="font-semibold text-sky-700 bg-sky-50 px-2 py-0.5 rounded text-[11px] inline-block mt-0.5">
-                    ≈ PackTwin Estimated
+                    ≈ Eco-PackAI Estimated
                   </span>
                 )}
               </div>
@@ -950,7 +950,7 @@ export default function StepForm({ onSubmit }) {
                   </span>
                 ) : (
                   <span className="font-semibold text-sky-700 bg-sky-50 px-2 py-0.5 rounded text-[11px] inline-block mt-0.5">
-                    ≈ PackTwin Estimated
+                    ≈ Eco-PackAI Estimated
                   </span>
                 )}
               </div>
@@ -968,7 +968,7 @@ export default function StepForm({ onSubmit }) {
                   </span>
                 ) : (
                   <span className="font-semibold text-sky-700 bg-sky-50 px-2 py-0.5 rounded text-[11px] inline-block mt-0.5">
-                    ≈ PackTwin Estimated
+                    ≈ Eco-PackAI Estimated
                   </span>
                 )}
               </div>
@@ -986,7 +986,7 @@ export default function StepForm({ onSubmit }) {
                   </span>
                 ) : (
                   <span className="font-semibold text-sky-700 bg-sky-50 px-2 py-0.5 rounded text-[11px] inline-block mt-0.5">
-                    ≈ PackTwin Derived ({respirationLevel})
+                    ≈ Eco-PackAI Derived ({respirationLevel})
                   </span>
                 )}
               </div>

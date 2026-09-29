@@ -10,7 +10,7 @@ export default function AboutPage() {
         <div className="w-12 h-12 rounded-2xl bg-emerald-600 text-white flex items-center justify-center mx-auto shadow-sm">
           <Package className="w-6 h-6" />
         </div>
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900">About PackTwin AI</h1>
+        <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900">About Eco-PackAI</h1>
         <p className="text-slate-600 text-base max-w-xl mx-auto leading-relaxed">
           Democratizing food packaging science for food businesses, farmers, startups, and food manufacturers worldwide.
         </p>
@@ -28,7 +28,7 @@ export default function AboutPage() {
         </p>
 
         <p className="text-slate-600 text-sm leading-relaxed">
-          PackTwin AI bridges this gap by translating simple business inputs (food type, target shelf life, storage temperature, transportation distance, and priority) into scientifically sound packaging recommendations.
+          Eco-PackAI bridges this gap by translating simple business inputs (food type, target shelf life, storage temperature, transportation distance, and priority) into scientifically sound packaging recommendations.
         </p>
       </div>
 

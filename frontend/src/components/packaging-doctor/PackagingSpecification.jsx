@@ -27,7 +27,7 @@ export default function PackagingSpecification({ data, redesignCandidate }) {
         <div>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 text-white text-xs font-bold mb-2">
             <FileText className="w-3.5 h-3.5 text-emerald-400" />
-            <span>PackTwin AI Engineering Document</span>
+            <span>Eco-PackAI Engineering Document</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900">Packaging Engineering Specification</h2>
           <p className="text-xs text-slate-500">Formal packaging design & validation specification</p>
@@ -127,7 +127,7 @@ export default function PackagingSpecification({ data, redesignCandidate }) {
       <div className="pt-4 border-t border-slate-200 text-[11px] text-slate-500 flex items-start gap-2">
         <AlertCircle className="w-4 h-4 text-slate-400 shrink-0 mt-0.5" />
         <p className="leading-relaxed">
-          <strong>Engineering Disclaimer:</strong> PackTwin provides decision-support estimates and candidate packaging designs. Results should be validated using appropriate packaging, food-quality, regulatory, and laboratory testing before commercial use.
+          <strong>Engineering Disclaimer:</strong> Eco-PackAI provides decision-support estimates and candidate packaging designs. Results should be validated using appropriate packaging, food-quality, regulatory, and laboratory testing before commercial use.
         </p>
       </div>
     </div>

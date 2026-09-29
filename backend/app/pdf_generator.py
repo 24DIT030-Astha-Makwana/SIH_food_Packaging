@@ -75,7 +75,7 @@ def generate_pdf_report(recommendation_data: dict) -> bytes:
     story = []
 
     # Title & Header
-    story.append(Paragraph("PackTwin AI — Smart Food Packaging Report", title_style))
+    story.append(Paragraph("Eco-PackAI — Smart Food Packaging Report", title_style))
     story.append(Paragraph("AI-Powered Packaging Science & Decision Support Analysis", subtitle_style))
     story.append(HRFlowable(width="100%", thickness=1.5, color=colors.HexColor('#0EA5E9'), spaceAfter=15))
 
@@ -158,3 +158,5 @@ def generate_pdf_report(recommendation_data: dict) -> bytes:
     doc.build(story)
     buffer.seek(0)
     return buffer.getvalue()
+
+

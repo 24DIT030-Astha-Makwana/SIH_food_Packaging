@@ -1,5 +1,5 @@
 /**
- * PackTwin AI - Packaging Autopsy & Redesign Engine
+ * Eco-PackAI - Packaging Autopsy & Redesign Engine
  * 
  * Generates comprehensive autopsy report, failure mechanisms, timeline,
  * package DNA, minimum-change candidate redesigns, validation plan, and engineering spec.
@@ -237,6 +237,6 @@ export function runPackagingAutopsy(data) {
     packageDNA,
     minimumChangeRedesigns,
     validationPlan,
-    disclaimer: "PackTwin provides decision-support estimates and candidate packaging designs. Results should be validated using appropriate packaging, food-quality, regulatory, and laboratory testing before commercial use."
+    disclaimer: "Eco-PackAI provides decision-support estimates and candidate packaging designs. Results should be validated using appropriate packaging, food-quality, regulatory, and laboratory testing before commercial use."
   };
 }
